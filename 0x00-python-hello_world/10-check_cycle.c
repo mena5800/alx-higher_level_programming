@@ -10,6 +10,10 @@ int check_cycle(listint_t *list)
 {
 	listint_t *first = list;
 
+	if (list)
+	{
+		return (0);
+	}
 	while (list->next)
 	{
 		if (list->next == first)
