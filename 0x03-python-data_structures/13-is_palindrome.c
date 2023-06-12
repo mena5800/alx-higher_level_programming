@@ -8,8 +8,8 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
-	listint_t *new = *head;
-	int flag = 1, i, j, new_counter = 0, counter = 0;
+	int flag = 1, i, counter = 0;
+	int *stack;
 
 	if (current == NULL || current->next == NULL)
 	{
@@ -20,24 +20,24 @@ int is_palindrome(listint_t **head)
 		counter++;
 		current = current->next;
 	}
+	stack = malloc((counter / 2) * sizeof(int));
 	current = *head;
-	flag = 1;
-	new_counter = counter - 1;
 	for (i = 0; i < counter / 2; i++)
 	{
-		for (j = 0; j < new_counter; j++)
-		{
-			new = new->next;
-		}
-		new_counter -= 2;
-		if (current->n != new->n)
+		stack[i] = current->n;
+		current = current->next;
+	}
+	if (counter % 2 != 0)
+		current = current->next;
+	for (i = counter / 2 - 1; i >= 0; i--)
+	{
+		if (stack[i] != current->n)
 		{
 			flag = 0;
 			break;
 		}
 		current = current->next;
-		new = current;
 	}
-
+	free(stack);
 	return (flag);
 }
