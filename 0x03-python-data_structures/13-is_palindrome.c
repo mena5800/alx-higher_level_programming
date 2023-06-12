@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
 
 	if (current == NULL || current->next == NULL)
 	{
-		return (0);
+		return (1);
 	}
 	while (current)
 	{
@@ -87,8 +87,9 @@ int reverse(int **ptr, int length)
 	int *nums = *ptr;
 	int last = length - 1;
 	int temp;
+	int i;
 
-	for (int i = 0; i < length / 2; i++)
+	for (i = 0; i < length / 2; i++)
 	{
 		temp = nums[i];
 		nums[i] = nums[last];
