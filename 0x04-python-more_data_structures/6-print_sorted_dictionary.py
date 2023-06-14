@@ -9,5 +9,4 @@ def print_sorted_dictionary(a_dictionary):
     my_list = list(a_dictionary.keys())
     my_list.sort()
     for key in my_list:
-        print("{}: {}".format(key,a_dictionary[key]))
-        
+        print("{}: {}".format(key, a_dictionary[key]))

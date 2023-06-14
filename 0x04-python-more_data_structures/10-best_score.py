@@ -6,7 +6,7 @@ def best_score(a_dictionary):
     Args:
         a_dictionary (dict): initial dict
     """
-    if (a_dictionary == None):
+    if (a_dictionary is None):
         return None
     max_value = max(list(a_dictionary.values()))
     return max_value

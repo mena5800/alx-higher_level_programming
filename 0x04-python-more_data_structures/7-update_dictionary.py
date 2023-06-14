@@ -5,7 +5,7 @@ def update_dictionary(a_dictionary, key, value):
 
     Args:
         a_dictionary (dict): initial dictionary
-        key (string): key 
+        key (string): key
         value (any type): value
     """
     a_dictionary[key] = value

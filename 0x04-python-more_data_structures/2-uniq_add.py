@@ -12,7 +12,7 @@ def uniq_add(my_list=[]):
     my_dict = {}
     sum = 0
     for num in my_list:
-        if (my_dict.get(num, None) == None):
+        if (my_dict.get(num, None) is None):
             my_dict[num] = 1
             sum += num
 

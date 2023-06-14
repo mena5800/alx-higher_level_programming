@@ -7,7 +7,7 @@ def simple_delete(a_dictionary, key=""):
         a_dictionary (dict): initial dict
         key (str, optional): key. Defaults to "".
     """
-    if (a_dictionary.get(key, None) != None):
+    if (a_dictionary.get(key, None) is None):
         a_dictionary.pop(key)
 
     return a_dictionary
