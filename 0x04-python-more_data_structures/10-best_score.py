@@ -8,5 +8,10 @@ def best_score(a_dictionary):
     """
     if (a_dictionary is None):
         return None
-    max_value = max(list(a_dictionary.values()))
-    return max_value
+    max_value = -float("inf")
+    key_max_value = ""
+    for key in a_dictionary:
+        if (max_value < a_dictionary[key]):
+            key_max_value = key
+            max_value = a_dictionary[key]
+    return key_max_value
