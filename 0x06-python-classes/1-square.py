@@ -12,4 +12,12 @@ class Square:
     attributes:
                 size
     """
-    __size = 5
+
+    def __init__(self, size):
+        """
+        constructor function of class square.
+
+        parameters:
+                        size : the size of square.
+        """
+        self.__size = size
