@@ -64,7 +64,7 @@ class Rectangle:
 
         if self.__is_pos(num) is False:
             error = name + " must be >= 0"
-            raise TypeError(error)
+            raise ValueError(error)
 
         return True
 
@@ -126,8 +126,14 @@ class Rectangle:
 
     def __repr__(self):
         """
-        return a string representation of the rectangle to 
+        return a string representation of the rectangle to
         be able to recreate a new instance.
         """
         text = "Rectangle({},{})".format(self.__width, self.__height)
         return text
+
+    def __del__(self):
+        """
+        print massage bye
+        """
+        print("Bye rectangle...")

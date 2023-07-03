@@ -64,7 +64,7 @@ class Rectangle:
 
         if self.__is_pos(num) is False:
             error = name + " must be >= 0"
-            raise TypeError(error)
+            raise ValueError(error)
 
         return True
 
