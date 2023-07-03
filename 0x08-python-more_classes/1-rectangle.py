@@ -14,8 +14,6 @@ class Rectangle:
         """
         init function to initialize object
         """
-        self.__is_int_pos(width, "width")
-        self.__is_int_pos(height, "height")
         self.__width = width
         self.__height = height
 
