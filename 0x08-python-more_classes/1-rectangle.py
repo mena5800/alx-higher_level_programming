@@ -14,8 +14,8 @@ class Rectangle:
         """
         init function to initialize object
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def __is_int(self, object):
         """
@@ -26,7 +26,7 @@ class Rectangle:
         Return:
                         True if object is int or False if object is not int.
         """
-        if type(object) is int:
+        if isinstance(object,int):
             return True
         else:
             return False
