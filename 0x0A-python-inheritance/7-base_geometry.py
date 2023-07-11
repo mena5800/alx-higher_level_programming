@@ -19,7 +19,7 @@ class BaseGeometry:
         """
         function to check that value is int and > 0
         """
-        if type(value) is not int:
+        if type(value) != int:
             error_message = "{} must be an integer".format(name)
             raise TypeError(error_message)
 
