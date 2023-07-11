@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+this module contian class square
+"""
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
