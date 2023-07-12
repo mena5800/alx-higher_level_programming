@@ -13,4 +13,5 @@ def read_file(filename=""):
                 filename: the name of file
     """
     with open(filename, encoding="utf8") as f:
-        print(f.read())
+        for line in f:
+            print(line, end="")
