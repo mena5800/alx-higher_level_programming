@@ -1,4 +1,4 @@
-#!/usr/bin/ls
+#!/usr/bin/python3
 
 """
 this module has one function class_to_json
