@@ -22,7 +22,7 @@ class Student:
         """
         return attributes in dict
         """
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
         else:
             my_dict = {}
