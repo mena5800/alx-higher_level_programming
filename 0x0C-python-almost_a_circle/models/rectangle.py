@@ -10,6 +10,7 @@ class Rectangle(Base):
     """
     this Rectangle class inherit from Base
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         initialization method
@@ -122,16 +123,18 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        Update the class Rectangle by overriding the __str__ method so that it returns
-        [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        Update the class Rectangle by overriding the __str__ method so that it
+        returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return "({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
-    
+        return "({}) {}/{} - {}/{}".format(self.id,
+                                           self.__x, self.__y,
+                                           self.__width, self.__height)
+
     def update(self, *args):
         """
-        Update the class Rectangle by adding the public method def update(self, *args):
-        that assigns an argument to each attribute:
-        """        
+        Update the class Rectangle by adding the public method
+        def update(self, *args):that assigns an argument to each attribute:
+        """
         self.id = args[0]
         self.__width = args[1]
         self.__height = args[2]
