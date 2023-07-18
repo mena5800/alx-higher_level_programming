@@ -3,8 +3,7 @@
 """
 this module contian class Rectangle
 """
-# from models.base import Base
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
