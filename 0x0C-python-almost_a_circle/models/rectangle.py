@@ -3,7 +3,8 @@
 """
 this module contian class Rectangle
 """
-from models.base import Base
+# from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -116,27 +117,36 @@ class Rectangle(Base):
         prints in stdout the Rectangle instance with the character
         # - you don't need to handle x and y here.
         """
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
+        for i in range(self.__y):
             print("")
+
+        for i in range(self.__height):
+            my_str = " " * self.__x + "#" * self.__width
+            print(my_str)
 
     def __str__(self):
         """
         Update the class Rectangle by overriding the __str__ method so that it
         returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return "({}) {}/{} - {}/{}".format(self.id,
-                                           self.__x, self.__y,
-                                           self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x, self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Update the class Rectangle by adding the public method
         def update(self, *args):that assigns an argument to each attribute:
         """
-        self.id = args[0]
-        self.__width = args[1]
-        self.__height = args[2]
-        self.__x = args[3]
-        self.__y = args[4]
+        my_attributes = ["id", "_Rectangle__width",
+                         "_Rectangle__height",
+                         "_Rectangle__x", "_Rectangle__y"]
+        for i in range(len(args)):
+            self.__validate_int_positive(args[i], my_attributes[i])
+            self.__dict__[my_attributes[i]] = args[i]
+
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                self.__validate_int_positive(value, key)
+                self.__dict__["_Rectangle__{}".format(key)] = value
