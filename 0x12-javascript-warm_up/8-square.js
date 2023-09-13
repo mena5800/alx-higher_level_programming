@@ -8,5 +8,7 @@ if (isNaN(num)) {
   for (let i = 0; i < num; i++) {
     myStr += 'X';
   }
-  console.log(myStr);
+  for (let i = 0; i < num; i++) {
+    console.log(myStr);
+  }
 }
