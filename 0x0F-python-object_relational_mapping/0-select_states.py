@@ -7,23 +7,25 @@ import MySQLdb
 from sys import argv
 
 
-username = argv[1]
-password = argv[2]
-database_name = argv[3]
-host_name = "localhost"
+if __name__ == "__main__":
+    username = argv[1]
+    password = argv[2]
+    database_name = argv[3]
+    host_name = "localhost"
 
+    db_connection = MySQLdb.connect(
+        host_name, username, password, database_name)
 
-db_connection = MySQLdb.connect(host_name, username, password, database_name)
+    cursor = db_connection.cursor()
 
-cursor = db_connection.cursor()
+    cursor.execute("""select *
+    from states
+    order by states.id """)
 
-cursor.execute("""select *
-               from states
-               order by states.id """)
+    m = cursor.fetchall()
 
-m = cursor.fetchall()
+    for row in m:
+        print(row)
 
-for row in m:
-    print(row)
-
-db_connection.close()
+    cursor.close()
+    db_connection.close()
