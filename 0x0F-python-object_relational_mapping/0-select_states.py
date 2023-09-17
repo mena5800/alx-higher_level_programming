@@ -12,6 +12,7 @@ if __name__ == "__main__":
     password = argv[2]
     database_name = argv[3]
     host_name = "localhost"
+    port = 3306
 
     db_connection = MySQLdb.connect(
         host_name, username, password, database_name)
