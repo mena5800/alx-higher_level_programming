@@ -1,4 +1,8 @@
-#!/bin/python3
+#!/usr/bin/python3
+
+"""
+this moudle to get access to database and print it.
+"""
 import MySQLdb
 from sys import argv
 
