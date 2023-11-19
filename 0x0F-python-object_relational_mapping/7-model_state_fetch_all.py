@@ -1,8 +1,6 @@
-#!/bin/python3
+#!/usr/bin/python3
 
-"""
-this module i use Sqlalchemy to list all state objects from
-database hbtn_0e_6_usa
+"""script to list all state objects from database hbtn_0e_6_usa
 """
 
 import sqlalchemy
