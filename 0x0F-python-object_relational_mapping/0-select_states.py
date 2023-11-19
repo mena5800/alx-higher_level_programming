@@ -12,10 +12,13 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute("""select * from states
-              order by states.id ASC;
+              order by states.id;
               """)
 
     rows = cur.fetchall()
 
     for row in rows:
         print(row)
+
+    cur.close()
+    db.close()

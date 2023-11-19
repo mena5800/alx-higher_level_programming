@@ -15,7 +15,7 @@ if __name__ == "__main__":
     cur.execute("""select cities.name from cities
               WHERE cities.state_id =
               (select id from states where states.name = %s)
-              order by cities.id asc;
+              order by cities.id;
               """, (argv[4],))
 
     rows = cur.fetchall()
@@ -26,3 +26,5 @@ if __name__ == "__main__":
         result += ", "
 
     print(result[:-2])
+    cur.close()
+    db.close()

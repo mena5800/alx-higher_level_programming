@@ -15,10 +15,13 @@ if __name__ == "__main__":
 
     cur.execute("""select * from states
               where name like "N%"
-              order by states.id asc;
+              order by states.id;
               """)
 
     rows = cur.fetchall()
 
     for row in rows:
         print(row)
+
+    cur.close()
+    db.close()
