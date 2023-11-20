@@ -17,7 +17,9 @@ if __name__ == "__main__":
     Session = sqlalchemy.orm.sessionmaker(bind=engine)
     session = Session()
 
-    target_state = session.query(State).filter(State.id == 2).first()
-    if target_state:
-        target_state.name = "New Mexico"
-        session.commit()
+    states = session.query(State).filter(State.name.like("%a%")).all()
+
+    for state in states:
+        session.delete(state)
+
+    session.commit()
