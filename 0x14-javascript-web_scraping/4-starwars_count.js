@@ -2,7 +2,7 @@
 const request = require('request');
 
 const url = process.argv[2];
-const WhatWeLook = 'https://swapi-api.alx-tools.com/api/people/18/';
+const id = 18;
 
 request.get(url, (err, response) => {
   if (err) {
@@ -12,7 +12,7 @@ request.get(url, (err, response) => {
     let counter = 0;
     for (let i = 0; i < results.length; i++) {
       for (let j = 0; j < results[i].characters.length; j++) {
-        if (results[i].characters[j] === WhatWeLook) {
+        if (results[i].characters[j].includes(id)) {
           counter += 1;
         }
       }
